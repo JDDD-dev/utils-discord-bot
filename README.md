@@ -4,8 +4,8 @@
  In this bot I will be adding slash commands that are usefull for me and my Discord friends.
 
 ## Currently working commands:
- /about
- /raffle
+ /about <br />
+ /raffle <br />
  ... and some meme commands <3
 
 ## Requirements

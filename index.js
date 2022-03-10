@@ -50,8 +50,7 @@ client.on('interactionCreate', async interaction => {
     if (!interaction.isCommand()) return;
 
     if (interaction.commandName === 'josepesao'){
-        const resource = createAudioResource('videoplayback.mp3')
-        console.log('ose')
+        const resource = createAudioResource('audio/videoplayback.mp3')
         const player = createAudioPlayer()
         if (interaction.member instanceof GuildMember){
             const channelId = interaction.member.voice.channel.id

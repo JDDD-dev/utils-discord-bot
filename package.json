@@ -1,0 +1,20 @@
+{
+  "name": "jd-bot",
+  "version": "1.0.0",
+  "description": "Discord bot with util commands",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "JD",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/voice": "^0.8.0",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0",
+    "ffmpeg-static": "^4.4.1",
+    "libsodium-wrappers": "^0.7.9",
+    "nodemon": "^2.0.15"
+  }
+}

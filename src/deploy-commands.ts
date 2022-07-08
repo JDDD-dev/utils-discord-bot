@@ -17,10 +17,10 @@ const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('
         commands.push(command.default.data.toJSON());
     }
 
-    if (process.env.TOKEN && process.env.CLIENTID && process.env.GUILD){
+    if (process.env.TOKEN && process.env.CLIENTID){
         const rest = new REST({ version: '10' }).setToken(process.env.TOKEN)
     
-        await rest.put(Routes.applicationGuildCommands(process.env.CLIENTID, process.env.GUILD), {body: commands})
+        await rest.put(Routes.applicationCommands(process.env.CLIENTID), {body: commands})
     }else{
         console.log("error")
     }

@@ -2,7 +2,7 @@ import 'dotenv/config'
 import { Client, Collection, Intents } from 'discord.js';
 import fs from 'node:fs'
 import path from 'node:path'
-import { fileURLToPath } from 'url'
+import { pathToFileURL } from 'url'
 
 const client = new Client(
     {
@@ -14,18 +14,20 @@ const client = new Client(
 client.commands = new Collection();
 
 (async () => {
-    const __filename = fileURLToPath(import.meta.url)
-    const __dirname = path.dirname(__filename)
+    const __filename = process.cwd().replace("index.js", "")
+    
 
-    const commandsPath = path.join(__dirname, 'commands')
+    const commandsPath = path.join(__filename, 'dist\\commands')
+    console.log(commandsPath)
     const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'))
 
     for (const file of commandFiles) {
         const filePath = path.join(commandsPath, file)
-        const command = await import(filePath)
+        console.log(filePath)
+        const command = await import(pathToFileURL(filePath).toString())
 
         // @ts-ignore
-        client.commands.set(command.data.name, command)
+        client.commands.set(command.default.data.name, command)
     }
 })()
 

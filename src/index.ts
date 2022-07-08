@@ -17,7 +17,7 @@ client.commands = new Collection();
     const __filename = process.cwd().replace("index.js", "")
     
 
-    const commandsPath = path.join(__filename, 'dist\\commands')
+    const commandsPath = path.join(__filename, 'dist/commands')
     console.log(commandsPath)
     const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'))
 

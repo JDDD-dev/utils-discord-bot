@@ -7,6 +7,6 @@ export default {
         .setDescription('About me :)')
         .setDMPermission(false),
     async execute(interaction: CommandInteraction) {
-        await interaction.reply('A simple Discord Bot made by https://github.com/iJDxX with Love <3')
+        await interaction.reply('A simple Discord Bot made by https://github.com/JDDD-dev with Love <3')
     }
 }

@@ -5,7 +5,11 @@ export default {
     data: new SlashCommandBuilder()
         .setName('raffle')
         .setDescription('Make a Raffle between the people in the same voice room')
-        .setDMPermission(false),
+        .setDMPermission(false)
+        .addNumberOption(option =>
+            option.setName('winners')
+                .setDescription('Set the number of Winners')
+                .setRequired(true)),
     async execute(interaction: CommandInteraction) {
         const { options } = interaction
         if (interaction.member instanceof GuildMember){

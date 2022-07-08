@@ -18,12 +18,10 @@ client.commands = new Collection();
     
 
     const commandsPath = path.join(__filename, 'dist/commands')
-    console.log(commandsPath)
     const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'))
 
     for (const file of commandFiles) {
         const filePath = path.join(commandsPath, file)
-        console.log(filePath)
         const command = await import(pathToFileURL(filePath).toString())
 
         // @ts-ignore
@@ -46,8 +44,9 @@ client.on('interactionCreate', async interaction => {
     if (!command) return
 
     try {
-        await command.execute(interaction)
+        await command.default.execute(interaction)
     } catch (error){
+        console.log(error)
         await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true })
     }
 })

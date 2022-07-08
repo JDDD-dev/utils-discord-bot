@@ -4,17 +4,23 @@
   "description": "Discord bot with util commands",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "start": "tsc && node dist/index.js",
+    "tsc": "tsc"
   },
+  "type": "module",
   "author": "JD",
   "license": "ISC",
   "dependencies": {
-    "@discordjs/voice": "^0.8.0",
-    "discord.js": "^13.6.0",
-    "dotenv": "^16.0.0",
-    "ffmpeg-static": "^4.4.1",
-    "libsodium-wrappers": "^0.7.9",
-    "nodemon": "^2.0.15"
+    "@discordjs/builders": "^0.15.0",
+    "@discordjs/rest": "^0.5.0",
+    "@discordjs/voice": "^0.10.0",
+    "discord-api-types": "^0.36.1",
+    "discord.js": "^13.8.1",
+    "dotenv": "^16.0.1",
+    "ffmpeg-static": "^5.0.2",
+    "libsodium-wrappers": "^0.7.10"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
   }
 }

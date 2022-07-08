@@ -13,6 +13,6 @@
 
 ## Usage
  ```bash
- npm install
- npm run dev
+ pnpm install
+ pnpm run start
  ```

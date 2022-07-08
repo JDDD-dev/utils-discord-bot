@@ -4,7 +4,7 @@
   "description": "Discord bot with util commands",
   "main": "index.js",
   "scripts": {
-    "build": "tsc && node dist/index.js",
+    "run": "tsc && node dist/index.js",
     "tsc": "tsc"
   },
   "type": "module",
